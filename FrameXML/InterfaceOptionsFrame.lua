@@ -11,7 +11,7 @@ local defaults = {
 local panel = CreateFrame("Frame")
 
 function panel:OnEvent(event, addOnName)
-	if addOnName == "HealthstoneAutoMacro" then
+	if addOnName == "InstahealAutoMacro" then
 		HAMDB = HAMDB or CopyTable(defaults)
 		self.db = HAMDB
 		self:InitializeOptions()
@@ -23,20 +23,20 @@ panel:SetScript("OnEvent", panel.OnEvent)
 
 function panel:InitializeOptions()
 	self.panel = CreateFrame("Frame")
-	self.panel.name = "Healthstone Auto Macro"
+	self.panel.name = "Instaheal Auto Macro"
 
 	local title = self.panel:CreateFontString("ARTWORK", nil, "GameFontNormalLarge")
 	title:SetPoint("TOP")
-	title:SetText("Healthstone Auto Marco Settings")
+	title:SetText("InstaHeal Auto Macro Settings")
 	
 	local subtitle = self.panel:CreateFontString("ARTWORK", nil, "GameFontNormal")
 	subtitle:SetPoint("TOPLEFT", 20, -30)
-	subtitle:SetText("Here you can configure the behaviour of the Addon eg. if you want to include class spells")
+	subtitle:SetText("Here you can configure if you want to include class spells")
 
 
 	local renewalButton = CreateFrame("CheckButton", nil, self.panel, "InterfaceOptionsCheckButtonTemplate")
 	renewalButton:SetPoint("TOPLEFT", subtitle, 20, -30)
-	renewalButton.Text:SetText("Use Renewal")
+	renewalButton.Text:SetText("Druid - Use Renewal")
 	renewalButton:HookScript("OnClick", function(_, btn, down)
 		self.db.renewal = renewalButton:GetChecked()
 	end)
@@ -52,7 +52,7 @@ function panel:InitializeOptions()
 
 	local exhilarationButton = CreateFrame("CheckButton", nil, self.panel, "InterfaceOptionsCheckButtonTemplate")
 	exhilarationButton:SetPoint("TOPLEFT", renewalButton, 0, -30)
-	exhilarationButton.Text:SetText("Use Exhilaration")
+	exhilarationButton.Text:SetText("Hunter - Use Exhilaration")
 	exhilarationButton:HookScript("OnClick", function(_, btn, down)
 		self.db.exhilaration = exhilarationButton:GetChecked()
 	end)
@@ -68,7 +68,7 @@ function panel:InitializeOptions()
 
 	local bitterImmunityButton = CreateFrame("CheckButton", nil, self.panel, "InterfaceOptionsCheckButtonTemplate")
 	bitterImmunityButton:SetPoint("TOPLEFT", exhilarationButton, 0, -30)
-	bitterImmunityButton.Text:SetText("Use Bitter Immunity")
+	bitterImmunityButton.Text:SetText("Warrior - Use Bitter Immunity")
 	bitterImmunityButton:HookScript("OnClick", function(_, btn, down)
 		self.db.bitterImmunity = bitterImmunityButton:GetChecked()
 	end)
@@ -84,7 +84,7 @@ function panel:InitializeOptions()
 
 	local crimsonVialButton = CreateFrame("CheckButton", nil, self.panel, "InterfaceOptionsCheckButtonTemplate")
 	crimsonVialButton:SetPoint("TOPLEFT", bitterImmunityButton, 0, -30)
-	crimsonVialButton.Text:SetText("Use Crimson Vial")
+	crimsonVialButton.Text:SetText("Rogue - Use Crimson Vial")
 	crimsonVialButton:HookScript("OnClick", function(_, btn, down)
 		self.db.crimsonVial = crimsonVialButton:GetChecked()
 	end)
@@ -100,7 +100,7 @@ function panel:InitializeOptions()
 
 	local desperatePrayerButton = CreateFrame("CheckButton", nil, self.panel, "InterfaceOptionsCheckButtonTemplate")
 	desperatePrayerButton:SetPoint("TOPLEFT", crimsonVialButton, 0, -30)
-	desperatePrayerButton.Text:SetText("Use Desperate Prayer")
+	desperatePrayerButton.Text:SetText("Priest - Use Desperate Prayer")
 	desperatePrayerButton:HookScript("OnClick", function(_, btn, down)
 		self.db.desperatePrayer = desperatePrayerButton:GetChecked()
 	end)
@@ -116,7 +116,7 @@ function panel:InitializeOptions()
 
 	local verdantEmbraceButton = CreateFrame("CheckButton", nil, self.panel, "InterfaceOptionsCheckButtonTemplate")
 	verdantEmbraceButton:SetPoint("TOPLEFT", desperatePrayerButton, 0, -30)
-	verdantEmbraceButton.Text:SetText("Use Verdant Embrace")
+	verdantEmbraceButton.Text:SetText("Evoker - Use Verdant Embrace")
 	verdantEmbraceButton:HookScript("OnClick", function(_, btn, down)
 		self.db.verdantEmbrace = verdantEmbraceButton:GetChecked()
 	end)
@@ -149,8 +149,8 @@ function panel:InitializeOptions()
 	InterfaceOptions_AddCategory(self.panel)
 end
 
-SLASH_HAM1 = "/ham"
-SLASH_HAM2 = "/healtsthoneautomacro"
+SLASH_HAM1 = "/isth"
+SLASH_HAM2 = "/instahealautomacro"
 
 SlashCmdList.HAM = function(msg, editBox)
 	InterfaceOptionsFrame_OpenToCategory(panel.panel)

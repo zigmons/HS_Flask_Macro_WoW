@@ -1,5 +1,5 @@
 local addonName, ham = ...
-local macroName = "HAMHealthPot"
+local macroName = "INStahealPot"
 
 local function addPlayerHealingSpellsIfAvailable()
   local myPlayer=ham.Player.new()
