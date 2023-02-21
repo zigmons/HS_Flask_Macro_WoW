@@ -1,8 +1,8 @@
 ## Interface: 100002
-## Version: 2.5.4
+## Version: 1.0.0
 ## Title: Healthstone Auto Macro
-## Author: ollidiemaus
-## Notes: Updates the Macro HAMHealthPot to use either Healthstone or the highest Potion found in Bags 
+## Author: Zigmons
+## Notes: Updates the Macro Instaheal to use either Healthstone or the highest Potion found in Bags 
 ## X-Curse-Project-ID: 312940
 ## X-Wago-ID: yQKybBG7
 ## SavedVariables: HAMDB
