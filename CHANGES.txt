@@ -1,5 +1,4 @@
 lightweight tag 24617430d70ea06db5f5646fc4da4244154b77bb 2.5.4
-Author:	GitHub <noreply@github.com>
 Date:	Fri Jan 6 20:47:57 2023 +0100
 
 
